@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Unidad 5 - Turbo Rush</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="game"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <div class="pill">Velocidad: <span id="speed">0</span> km/h</div>
+        <div class="pill">Distancia: <span id="distance">0</span> m</div>
+        <div class="pill">Puntos: <span id="score">0</span></div>
+      </div>
+      <div class="hud-right">
+        <div class="pill nitro">Nitro: <span id="nitro">100</span>%</div>
+        <button id="pauseBtn" class="mini-btn">Pausa</button>
+      </div>
+    </div>
+
+    <div id="menu" class="overlay">
+      <div class="panel hero">
+        <h1>Turbo Rush</h1>
+        <p class="subtitle">Juego de carreras arcade inspirado en acción urbana. Juega en PC o celular.</p>
+        <div class="menu-grid">
+          <button id="playBtn" class="primary">Jugar</button>
+          <button id="howBtn" class="secondary">Cómo jugar</button>
+        </div>
+        <div id="howPanel" class="how hidden">
+          <p><strong>PC:</strong> Flechas o WASD para conducir. Shift/Espacio para nitro. P para pausar.</p>
+          <p><strong>Móvil:</strong> Usa los botones táctiles para girar, acelerar/frenar y activar nitro.</p>
+          <p>Esquiva tráfico, recoge orbes de energía y llega lo más lejos posible.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="pauseOverlay" class="overlay hidden">
+      <div class="panel">
+        <h2>Pausa</h2>
+        <button id="resumeBtn" class="primary">Continuar</button>
+        <button id="restartBtn" class="secondary">Reiniciar</button>
+      </div>
+    </div>
+
+    <div id="gameOver" class="overlay hidden">
+      <div class="panel">
+        <h2>Choque</h2>
+        <p id="finalStats"></p>
+        <button id="retryBtn" class="primary">Jugar de nuevo</button>
+        <button id="menuBtn" class="secondary">Menú</button>
+      </div>
+    </div>
+
+    <div id="touchControls" class="hidden">
+      <div class="touch-left">
+        <button class="touch-btn" data-action="left">◀</button>
+        <button class="touch-btn" data-action="right">▶</button>
+      </div>
+      <div class="touch-right">
+        <button class="touch-btn accel" data-action="accel">▲</button>
+        <button class="touch-btn brake" data-action="brake">▼</button>
+        <button class="touch-btn nitro-btn" data-action="nitro">NITRO</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
